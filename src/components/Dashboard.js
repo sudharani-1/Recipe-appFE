@@ -14,7 +14,7 @@ const Dashboard = () => {
   }, []);
 
   const getRecipes = () => {
-    fetch("http://localhost:3001/auth/recipe", {
+    fetch("https://recipe-appbe.onrender.com/auth/recipe", {
       method: "GET",
       headers: {
         Authorization: `${localStorage.getItem("token")}`,
@@ -38,7 +38,7 @@ const Dashboard = () => {
         try {
           // Send a POST request to the LikedList controller
           const response = await fetch(
-            `http://localhost:3001/auth/likedRecipes/${recipeId}`,
+            `https://recipe-appbe.onrender.com/auth/likedRecipes/${recipeId}`,
             {
               method: "POST",
             }
@@ -66,7 +66,7 @@ const Dashboard = () => {
     try {
       if (e.target.value) {
         let Searchedrecipes = await fetch(
-          `http://localhost:3001/auth/searchRecipes/${e.target.value}`,
+          `https://recipe-appbe.onrender.com/auth/searchRecipes/${e.target.value}`,
           {
             method: "GET",
             headers: {
@@ -97,7 +97,7 @@ const Dashboard = () => {
           if (window.confirm("Are you sure you want to delete this recipe?")) {
             // Send a DELETE request to the server
             const response = await fetch(
-              `http://localhost:3001/auth/recipe/${recipeId}`,
+              `https://recipe-appbe.onrender.com/auth/recipe/${recipeId}`,
               {
                 method: "DELETE",
               }
