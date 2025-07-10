@@ -12,7 +12,7 @@ const Navbar = () => {
       localStorage.clear();
       window.location.href = "/login";
     } else {
-      window.location.href = "/";
+      window.location.href = "/Dashboard";
     }
   };
 
